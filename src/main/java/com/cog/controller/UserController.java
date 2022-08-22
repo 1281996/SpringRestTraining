@@ -15,7 +15,7 @@ import com.cog.service.UserService;
 public class UserController {
 	@Autowired
 	UserService userService;
-	//get all registered users
+	//get all registered userss
 	@GetMapping("/allUsers")
 	List<User> getAllUsers(){
 		return userService.findAllUsers();
