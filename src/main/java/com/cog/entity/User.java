@@ -5,6 +5,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.SequenceGenerator;
+import javax.validation.constraints.Min;
+import javax.validation.constraints.NotBlank;
 
 @Entity
 public class User {
@@ -12,7 +14,9 @@ public class User {
 	@GeneratedValue(generator = "user_gen",strategy = GenerationType.SEQUENCE)
 	@SequenceGenerator(name = "user_gen")
 	Integer id;
+	@NotBlank(message="Not Blank")
 	String name;
+	@Min(value = 1,message = "age canot be less than zero")
 	Integer age;
 	Double sal;
 	public User() {
